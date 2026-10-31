@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菊池 伸哉 様 公式Webサイト リニューアル戦略提案書</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        mincho: ['"Shippori Mincho"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#C28424',
+                            amber: '#B45309',
+                            dark: '#1E293B',
+                            light: '#FAF9F6',
+                            card: '#FFFFFF',
+                            border: '#E2E8F0',
+                            navy: '#1E3A5F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* A4 ページ管理スタイル */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+        
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            padding: 16mm 18mm;
+            margin: 0 auto 12mm auto;
+            background: #FFFFFF;
+            box-sizing: border-box;
+            position: relative;
+            page-break-after: always;
+            break-after: page;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        @media screen {
+            body {
+                background-color: #EDE8E1;
+            }
+            .a4-page {
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .a4-page {
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-height: 297mm !important;
+                height: 297mm !important;
+                overflow: hidden !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased py-6">
+
+    <!-- 画面用操作バー -->
+    <div class="max-w-[210mm] mx-auto mb-6 px-4 flex justify-between items-center no-print">
+        <a href="website_new_landing_page.html" target="_blank" class="text-xs font-bold text-brand-amber hover:underline flex items-center gap-1.5">
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+            <span>新トップページ（実動デモ）を開く</span>
+        </a>
+        <button onclick="window.print()" class="px-5 py-2.5 bg-brand-amber hover:bg-amber-800 text-white rounded-xl text-xs font-bold shadow-md transition flex items-center gap-2">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span>この提案書を印刷 / PDF保存</span>
+        </button>
+    </div>
+
+    <!-- ==================== PAGE 1 ==================== -->
+    <div class="a4-page">
+        <!-- ページヘッダー（軽やかで清潔感のある白×ゴールド・インディゴ） -->
+        <div>
+            <!-- 最上部バナー -->
+            <div class="border-b-2 border-brand-gold/40 pb-4 mb-5">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-amber tracking-wider bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+                        <i data-lucide="compass" class="w-3.5 h-3.5 text-brand-amber"></i>
+                        <span>Web戦略・事業基盤 刷新提案書</span>
+                    </span>
+                    <span class="text-[11px] text-slate-400 font-medium">策定日：2026年10月31日 ｜ 対象：lifesherpasin.com</span>
+                </div>
+                <h1 class="font-mincho text-2xl font-bold text-slate-900 tracking-tight leading-snug">
+                    菊池 伸哉 様 公式サイト リニューアル＆売上最大化 戦略提案書
+                </h1>
+                <p class="text-xs text-slate-600 mt-1 font-medium">
+                    「在り方をととのえる」から、唯一無二の価値が「選ばれ、成約につながる」Web基盤への進化
+                </p>
+
+                <!-- メタ情報バー（すっきりとしたカードスタイル） -->
+                <div class="grid grid-cols-4 gap-2 mt-3 pt-3 border-t border-slate-100 text-[11px]">
+                    <div class="bg-slate-50 p-2 rounded-lg border border-slate-200/70">
+                        <span class="text-slate-400 block text-[10px]">クライアント</span>
+                        <span class="font-bold text-slate-800">菊池 伸哉（きくりん）様</span>
+                    </div>
+                    <div class="bg-slate-50 p-2 rounded-lg border border-slate-200/70">
+                        <span class="text-slate-400 block text-[10px]">現行サイト</span>
+                        <span class="font-bold text-slate-800">lifesherpasin.com</span>
+                    </div>
+                    <div class="bg-slate-50 p-2 rounded-lg border border-slate-200/70">
+                        <span class="text-slate-400 block text-[10px]">基盤モデル</span>
+                        <span class="font-bold text-slate-800">五感（蕎麦）× 対話（心）</span>
+                    </div>
+                    <div class="bg-amber-50 p-2 rounded-lg border border-amber-200">
+                        <span class="text-amber-800 block text-[10px] font-bold">目指すゴール</span>
+                        <span class="font-bold text-brand-amber">年商3,000万円体制の確立</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 01 エグゼクティブサマリー -->
+            <section class="mb-5 avoid-break">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-md bg-brand-gold text-white flex items-center justify-center font-bold text-xs">01</span>
+                    <h2 class="font-mincho text-base font-bold text-slate-900">エグゼクティブサマリー（提案の背景と目的）</h2>
+                </div>
+                <div class="bg-amber-50/40 p-3.5 rounded-xl border border-amber-200/70 text-xs text-slate-700 leading-relaxed space-y-2">
+                    <p>
+                        菊池伸哉様が展開されている「ライフ＆キャリアシェルパ」の活動は、<strong>「国家資格キャリアコンサルタント・産業カウンセラーとしての専門的な対話力」</strong>と<strong>「元蕎麦職人としての身体性・五感マインドフルネス」</strong>を兼ね備えた、日本全国でも他に類を見ない唯一無二の存在です。
+                    </p>
+                    <p>
+                        しかし現在の公式HPは、菊池様の温かい哲学が伝わっている一方で、<strong>「訪問者が次にどこをクリックすべきか（成約導線）」が曖昧</strong>であり、高付加価値な法人向け案件（経営者合宿・研修・企業顧問）のオファーが十分に表現されていません。
+                    </p>
+                    <p class="font-bold text-slate-900 bg-white p-2 rounded-lg border border-amber-300 text-[11.5px]">
+                        💡 <strong>本リニューアルの目的：</strong> 現在の温もりある哲学を100%継承しながら、「個人向け伴走」「法人向け組織開発」「五感蕎麦体験」の3大動線を完全確立し、実働日数を抑えながら高収益（年商3,000万円体制）を支えるWeb基盤へと進化させます。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 02 現状サイト分析と課題の棚卸し -->
+            <section class="avoid-break">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-md bg-brand-gold text-white flex items-center justify-center font-bold text-xs">02</span>
+                    <h2 class="font-mincho text-base font-bold text-slate-900">現行サイト（lifesherpasin.com）の分析と課題の棚卸し</h2>
+                </div>
+                <table class="w-full text-left text-xs border-collapse bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs">
+                    <thead class="bg-slate-100 text-slate-800 font-bold border-b border-slate-200">
+                        <tr>
+                            <th class="p-2.5 w-1/4">評価観点</th>
+                            <th class="p-2.5 w-3/8 text-emerald-800">現行サイトの強み（継承・発展）</th>
+                            <th class="p-2.5 w-3/8 text-brand-amber">今回解決すべき重要課題（ボトルネック）</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-[11px] text-slate-700">
+                        <tr>
+                            <td class="p-2.5 font-bold bg-slate-50">① コンセプト・USP</td>
+                            <td class="p-2.5">「在り方をととのえる」「シェルパの伴走」という温かい人柄と世界観が出ている。</td>
+                            <td class="p-2.5 font-semibold text-amber-950">「なぜ蕎麦打ちとキャリアなのか？」という掛け算の必然性が一目で直感的に伝わりにくい。</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2.5 font-bold bg-slate-50">② ターゲット導線</td>
+                            <td class="p-2.5">これまでの活動実績やブログ記事が豊富に掲載されている。</td>
+                            <td class="p-2.5 font-semibold text-amber-950">「個人」「企業人事」「経営者」の入口が混在し、目的別のページへ誘導できていない。</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2.5 font-bold bg-slate-50">③ 収益構造の反映</td>
+                            <td class="p-2.5">単発の対話セッションや体験の案内がある。</td>
+                            <td class="p-2.5 font-semibold text-amber-950">月額15〜25万の顧問や30〜60万の研修など、高単価な法人向けオファーが埋もれている。</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2.5 font-bold bg-slate-50">④ 成約率（CVR）</td>
+                            <td class="p-2.5">総合お問い合わせフォームが設置されている。</td>
+                            <td class="p-2.5 font-semibold text-amber-950">「60分お試しセッション」「研修資料請求」など、行動を起こしやすいCTAボタンが弱い。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- ページフッター -->
+        <div class="pt-3 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
+            <span>ライフ＆キャリアシェルパ 菊池 伸哉 公式サイト リニューアル戦略提案書</span>
+            <span>Page 1 / 3</span>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="a4-page">
+        <div>
+            <!-- ヘッダー小見出し -->
+            <div class="flex justify-between items-center border-b border-slate-200 pb-2 mb-5">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Strategy & Funnel Architecture</span>
+                <span class="text-[11px] text-brand-amber font-bold">年商3,000万円基盤の構築</span>
+            </div>
+
+            <!-- 03 新サイトの3大リニューアル戦略 -->
+            <section class="mb-6 avoid-break">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-6 h-6 rounded-md bg-brand-gold text-white flex items-center justify-center font-bold text-xs">03</span>
+                    <h2 class="font-mincho text-base font-bold text-slate-900">新サイトの3大リニューアル戦略</h2>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <!-- 戦略 1 -->
+                    <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-brand-amber text-white flex items-center justify-center shadow-xs">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        </div>
+                        <h3 class="font-mincho font-bold text-xs text-slate-900">戦略①：USPの直感化</h3>
+                        <p class="text-[10.5px] text-slate-700 leading-relaxed">
+                            「頭で考える前に五感（蕎麦）を開き、対話で答えを掬い上げる」ストーリーをFVで提示。他社コーチとの差別化を一瞬で完了。
+                        </p>
+                    </div>
+
+                    <!-- 戦略 2 -->
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-brand-navy text-white flex items-center justify-center shadow-xs">
+                            <i data-lucide="split" class="w-4 h-4"></i>
+                        </div>
+                        <h3 class="font-mincho font-bold text-xs text-slate-900">戦略②：個人／法人の分離</h3>
+                        <p class="text-[10.5px] text-slate-700 leading-relaxed">
+                            個人の転機相談と、企業の組織開発・経営者合宿の導線を明確に分離。訪問者の属性に応じた最適なフックオファーを即座に提示。
+                        </p>
+                    </div>
+
+                    <!-- 戦略 3 -->
+                    <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center shadow-xs">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                        </div>
+                        <h3 class="font-mincho font-bold text-xs text-slate-900">戦略③：高単価ポートフォリオ</h3>
+                        <p class="text-[10.5px] text-slate-700 leading-relaxed">
+                            先日設計した「年商3,000万円」モデル（法人顧問・合宿・個人伴走・リトリート）をWeb上の商品構成に完全同期させます。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04 新サイトのアーキテクチャ＆成約ファネル -->
+            <section class="avoid-break">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-6 h-6 rounded-md bg-brand-gold text-white flex items-center justify-center font-bold text-xs">04</span>
+                    <h2 class="font-mincho text-base font-bold text-slate-900">新サイトのアーキテクチャ＆成約ファネル設計</h2>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- 個人向けファネル -->
+                        <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs space-y-3">
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                                    <i data-lucide="user" class="w-3.5 h-3.5 text-brand-amber"></i>
+                                    【個人向け（BtoC）ファネル】
+                                </span>
+                                <span class="text-[10px] text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full font-bold">安心と共感</span>
+                            </div>
+                            <ol class="text-[11px] text-slate-700 space-y-2">
+                                <li class="flex items-start gap-1.5">
+                                    <span class="w-4 h-4 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[10px] font-bold mt-0.5">1</span>
+                                    <span><strong>訪問・共感：</strong> note・SNS・検索からトップページへ来訪</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="w-4 h-4 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[10px] font-bold mt-0.5">2</span>
+                                    <span><strong>低ハードルフック：</strong> 【初回限定】60分お試し対話セッション</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="w-4 h-4 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[10px] font-bold mt-0.5">3</span>
+                                    <span><strong>本命伴走：</strong> 3〜6ヶ月継続ライフ＆キャリア伴走（15〜30万円）</span>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- 法人向けファネル -->
+                        <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs space-y-3">
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                                    <i data-lucide="building" class="w-3.5 h-3.5 text-brand-navy"></i>
+                                    【法人向け（BtoB）ファネル】
+                                </span>
+                                <span class="text-[10px] text-slate-800 bg-slate-200 px-2 py-0.5 rounded-full font-bold">信頼と実績</span>
+                            </div>
+                            <ol class="text-[11px] text-slate-700 space-y-2">
+                                <li class="flex items-start gap-1.5">
+                                    <span class="w-4 h-4 rounded-full bg-slate-200 text-slate-800 flex items-center justify-center text-[10px] font-bold mt-0.5">1</span>
+                                    <span><strong>訪問・認知：</strong> 紹介・専用LP（`service_corporate_lp.html`）</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="w-4 h-4 rounded-full bg-slate-200 text-slate-800 flex items-center justify-center text-[10px] font-bold mt-0.5">2</span>
+                                    <span><strong>低ハードルフック：</strong> 研修プログラム概要PDF請求 / 無料診断</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="w-4 h-4 rounded-full bg-slate-200 text-slate-800 flex items-center justify-center text-[10px] font-bold mt-0.5">3</span>
+                                    <span><strong>本命成約：</strong> チーム研修（35万〜）/ 合宿（60万〜）/ 顧問（月20万）</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- 導線フロー図（視覚的まとめ） -->
+                    <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                        <div class="text-[11px] font-bold text-slate-800 mb-1">【新トップページからの導線分岐】</div>
+                        <div class="flex items-center justify-center gap-2 text-[10.5px]">
+                            <span class="px-2 py-1 bg-amber-50 border border-amber-300 rounded font-medium text-amber-900">新トップ（lifesherpasin.com）</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3 text-slate-400"></i>
+                            <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">①個人相談（60分体験）</span>
+                            <span class="text-slate-300">/</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">②法人研修・合宿LP</span>
+                            <span class="text-slate-300">/</span>
+                            <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">③蕎麦リトリート</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ページフッター -->
+        <div class="pt-3 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
+            <span>ライフ＆キャリアシェルパ 菊池 伸哉 公式サイト リニューアル戦略提案書</span>
+            <span>Page 2 / 3</span>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE 3 ==================== -->
+    <div class="a4-page">
+        <div>
+            <!-- ヘッダー小見出し -->
+            <div class="flex justify-between items-center border-b border-slate-200 pb-2 mb-5">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Implementation Assets & Next Steps</span>
+                <span class="text-[11px] text-emerald-700 font-bold">すでに実動資産を完備</span>
+            </div>
+
+            <!-- 05 今回すでに作成・ローカル保存済みの実務資産 -->
+            <section class="mb-6 avoid-break">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-6 h-6 rounded-md bg-brand-gold text-white flex items-center justify-center font-bold text-xs">05</span>
+                    <h2 class="font-mincho text-base font-bold text-slate-900">今回すでに作成・ローカル保存済みの実務資産</h2>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="p-3 rounded-xl border border-slate-200 bg-white space-y-1 shadow-2xs">
+                        <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                            <i data-lucide="file-code" class="w-3.5 h-3.5 text-brand-amber"></i>
+                            <span>新総合トップページ（実動HTML）</span>
+                        </div>
+                        <div class="text-[10px] text-slate-400 font-mono">website_new_landing_page.html</div>
+                        <p class="text-slate-600 text-[10.5px]">和モダンデザイン、バッジ調整済、予約フォーム付き。ブラウザで即時閲覧可能。</p>
+                    </div>
+
+                    <div class="p-3 rounded-xl border border-slate-200 bg-white space-y-1 shadow-2xs">
+                        <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                            <i data-lucide="file-code" class="w-3.5 h-3.5 text-brand-navy"></i>
+                            <span>法人特化LP（実動HTML）</span>
+                        </div>
+                        <div class="text-[10px] text-slate-400 font-mono">service_corporate_lp.html</div>
+                        <p class="text-slate-600 text-[10.5px]">経営陣合宿、チームビルディング研修、巡回シェルパ（顧問）の専用提案LP。</p>
+                    </div>
+
+                    <div class="p-3 rounded-xl border border-slate-200 bg-white space-y-1 shadow-2xs">
+                        <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5 text-brand-amber"></i>
+                            <span>実践コピーライティング資産集</span>
+                        </div>
+                        <div class="text-[10px] text-slate-400 font-mono">website_copywriting_assets.md</div>
+                        <p class="text-slate-600 text-[10.5px]">キャッチコピー、ストーリー型プロフィール、FAQ、クロージング文案の完全原稿。</p>
+                    </div>
+
+                    <div class="p-3 rounded-xl border border-slate-200 bg-white space-y-1 shadow-2xs">
+                        <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5 text-emerald-700"></i>
+                            <span>リニューアル導線計画書</span>
+                        </div>
+                        <div class="text-[10px] text-slate-400 font-mono">website_renewal_plan.md</div>
+                        <p class="text-slate-600 text-[10.5px]">サイト構造、各ページのワイヤーフレーム、CTA設計の詳細設計書。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 06 導入スケジュール＆ネクストアクション -->
+            <section class="avoid-break mb-6">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-6 h-6 rounded-md bg-brand-gold text-white flex items-center justify-center font-bold text-xs">06</span>
+                    <h2 class="font-mincho text-base font-bold text-slate-900">導入スケジュール＆実装ステップ</h2>
+                </div>
+
+                <div class="space-y-2.5">
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="w-14 text-center py-1 bg-brand-amber text-white rounded font-bold text-xs">Step 1</div>
+                        <div class="flex-1">
+                            <div class="font-bold text-xs text-slate-900">原稿＆デザインの最終確認（即時実施可能）</div>
+                            <div class="text-[10.5px] text-slate-600">今回作成したHTMLとコピー資産をご確認いただき、写真やプロフィール文の微調整を行います。</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="w-14 text-center py-1 bg-brand-amber text-white rounded font-bold text-xs">Step 2</div>
+                        <div class="flex-1">
+                            <div class="font-bold text-xs text-slate-900">WordPress環境への反映 または 単独LP連携</div>
+                            <div class="text-[10.5px] text-slate-600">現行サイト（WordPress）のトップページを新デザインへ切り替えるか、サブディレクトリ等で本LPを公開します。</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="w-14 text-center py-1 bg-brand-amber text-white rounded font-bold text-xs">Step 3</div>
+                        <div class="flex-1">
+                            <div class="font-bold text-xs text-slate-900">各種CTA（TimeRex予約・公式LINE）の連携完了＆告知</div>
+                            <div class="text-[10.5px] text-slate-600">予約カレンダーとLINE登録を接続し、noteやInstagramにてリニューアルの告知を配信します。</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 結びのメッセージ -->
+            <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200 text-center space-y-1">
+                <div class="font-mincho text-sm font-bold text-slate-900">「大丈夫！すべてうまくいっている」</div>
+                <p class="text-[11px] text-slate-600">
+                    菊池様の温かいお人柄と唯一無二の価値が、必要としている多くの方へ届くWeb基盤をご一緒につくり上げましょう。
+                </p>
+            </div>
+        </div>
+
+        <!-- ページフッター -->
+        <div class="pt-3 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
+            <span>ライフ＆キャリアシェルパ 菊池 伸哉 公式サイト リニューアル戦略提案書</span>
+            <span>Page 3 / 3</span>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

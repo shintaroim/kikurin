@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>きくりん専用：収益最大化ダッシュボード＆ビジュアルカードカタログ</title>
+<style>
+
+    @page {
+        size: A4 portrait;
+        margin: 10mm 14mm 10mm 14mm;
+        @bottom-right {
+            content: counter(page) " / " counter(pages);
+            font-size: 9pt;
+            color: #718096;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        font-family: "BIZ UDPGothic", "Meiryo", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+        color: #2d3748;
+        line-height: 1.5;
+        font-size: 9.8pt;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .page-break {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    .doc-header {
+        background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+        color: #ffffff;
+        padding: 14px 20px;
+        border-radius: 7px;
+        margin-bottom: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .doc-header h1 {
+        color: #ffffff;
+        border-bottom: 2px solid #63b3ed;
+        font-size: 17pt;
+        margin: 0 0 5px 0;
+        padding-bottom: 4px;
+        font-weight: bold;
+    }
+    .doc-header .concept {
+        font-size: 9.3pt;
+        color: #e2e8f0;
+        margin: 0;
+        line-height: 1.45;
+    }
+
+    h2 {
+        font-size: 12.2pt;
+        color: #2b6cb0;
+        border-left: 5px solid #3182ce;
+        padding-left: 10px;
+        margin-top: 14px;
+        margin-bottom: 8px;
+        page-break-after: avoid;
+        break-after: avoid;
+        background: #ebf8ff;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-radius: 0 4px 4px 0;
+    }
+
+    h3 {
+        font-size: 10.8pt;
+        color: #2c5282;
+        border-bottom: 1.5px solid #bee3f8;
+        padding-bottom: 3px;
+        margin-top: 12px;
+        margin-bottom: 7px;
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    p {
+        margin: 0.25em 0 0.5em 0;
+    }
+
+    .no-break {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* Table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0 12px 0;
+        font-size: 9pt;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    th {
+        background: #2b6cb0;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 7px 9px;
+        text-align: left;
+        border: 1px solid #2b6cb0;
+        font-size: 9pt;
+    }
+    td {
+        padding: 6px 9px;
+        border: 1px solid #cbd5e0;
+        vertical-align: middle;
+        line-height: 1.4;
+    }
+    tr:nth-child(even) td {
+        background-color: #f7fafc;
+    }
+
+    /* Business Card Style */
+    .business-card {
+        background: #ffffff;
+        border: 1px solid #cbd5e0;
+        border-left: 5px solid #3182ce;
+        border-radius: 7px;
+        overflow: hidden;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 9px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .card-header {
+        background: #edf2f7;
+        border-bottom: 1px solid #cbd5e0;
+        padding: 5px 12px;
+        font-size: 10pt;
+        font-weight: bold;
+        color: #1a365d;
+    }
+    .card-body {
+        padding: 7px 12px;
+        display: grid;
+        grid-template-columns: 105px 1fr;
+        gap: 4px 10px;
+        font-size: 9.2pt;
+    }
+    .card-label {
+        font-weight: bold;
+        color: #4a5568;
+        display: flex;
+        align-items: center;
+        background: #f7fafc;
+        padding: 2px 7px;
+        border-radius: 4px;
+        white-space: nowrap;
+        border: 1px solid #e2e8f0;
+    }
+    .card-value {
+        color: #2d3748;
+        padding: 1px 0;
+        line-height: 1.45;
+    }
+    .card-value strong {
+        color: #c53030;
+    }
+
+    /* Funnel Style */
+    .funnel-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin: 8px 0;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    .funnel-step {
+        border-radius: 6px;
+        padding: 6px 12px;
+        color: #ffffff;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .funnel-step-1 { background: #3182ce; }
+    .funnel-step-2 { background: #2b6cb0; }
+    .funnel-step-3 { background: #2c5282; }
+    .funnel-step-4 { background: #1a365d; }
+    .funnel-step-title {
+        font-weight: bold;
+        font-size: 9.5pt;
+        margin-bottom: 2px;
+    }
+    .funnel-step-desc {
+        font-size: 8.3pt;
+        color: #edf2f7;
+    }
+    .funnel-arrow {
+        text-align: center;
+        font-size: 8.5pt;
+        font-weight: bold;
+        color: #2b6cb0;
+        margin: -2px 0;
+    }
+
+    .conclusion-box {
+        margin-top: 8px;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    ol, ul {
+        margin: 3px 0 5px 18px;
+        padding: 0;
+        font-size: 9.2pt;
+    }
+    li {
+        margin-bottom: 2px;
+    }
+    
+</style>
+</head>
+<body>
+<div class="doc-header"><h1>📊 きくりん専用：収益最大化ダッシュボード＆ビジュアルカードカタログ</h1><div class="concept">「対話（心）」×「手打ち蕎麦（五感・身体）」の唯一無二の掛け算で、労働時間を減らしながら年商3,000万円（月商250万円）を安定構築する事業構造設計図</div></div>
+
+
+
+
+
+<h2>🧭 【1画面でわかる】収益ポートフォリオ・ダッシュボード</h2>
+
+<div class="page-1-chart">
+    <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px 18px; margin: 10px 0 14px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); page-break-inside: avoid;">
+        <div style="text-align: center; font-weight: bold; font-size: 11.5pt; color: #1e3a8a; margin-bottom: 10px; letter-spacing: 0.5px;">
+            📊 年商3,000万円（月商250万円）収益ポートフォリオ構成
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: nowrap;">
+            <div style="position: relative; width: 270px; height: 270px; flex-shrink: 0;">
+                <svg width="270" height="270" viewBox="0 0 270 270">
+                    <path d="M 135.00 20.00 A 115 115 0 0 1 202.60 228.04 L 173.21 187.59 A 65 65 0 0 0 135.00 70.00 Z" fill="#2563eb" stroke="#ffffff" stroke-width="2.5" /><path d="M 202.60 228.04 A 115 115 0 0 1 41.96 202.60 L 82.41 173.21 A 65 65 0 0 0 173.21 187.59 Z" fill="#059669" stroke="#ffffff" stroke-width="2.5" /><path d="M 41.96 202.60 A 115 115 0 0 1 41.96 67.40 L 82.41 96.79 A 65 65 0 0 0 82.41 173.21 Z" fill="#d97706" stroke="#ffffff" stroke-width="2.5" /><path d="M 41.96 67.40 A 115 115 0 0 1 135.00 20.00 L 135.00 70.00 A 65 65 0 0 0 82.41 96.79 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="2.5" />
+                </svg>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none;">
+                    <div style="font-size: 8pt; color: #64748b; font-weight: 600;">目標年商</div>
+                    <div style="font-size: 13pt; font-weight: 800; color: #0f172a;">3,000万円</div>
+                    <div style="font-size: 8pt; color: #0284c7; font-weight: 700;">(月商250万)</div>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                
+        <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: #2563eb; flex-shrink: 0; margin-top: 3px;"></div>
+            <div>
+                <div style="font-weight: bold; font-size: 9.5pt; color: #1e293b;">法人顧問・BtoB研修 (高単価)</div>
+                <div style="font-size: 9pt; color: #475569;"><strong style="color: #2563eb; font-size: 10.5pt;">1,200万円 (40%)</strong> <span style="font-size: 8pt; color: #64748b;">(月100万円目安)</span></div>
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: #059669; flex-shrink: 0; margin-top: 3px;"></div>
+            <div>
+                <div style="font-weight: bold; font-size: 9.5pt; color: #1e293b;">高単価リトリート・個人伴走 (プレミアム)</div>
+                <div style="font-size: 9pt; color: #475569;"><strong style="color: #059669; font-size: 10.5pt;">750万円 (25%)</strong> <span style="font-size: 8pt; color: #64748b;">(月62.5万円目安)</span></div>
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: #d97706; flex-shrink: 0; margin-top: 3px;"></div>
+            <div>
+                <div style="font-weight: bold; font-size: 9.5pt; color: #1e293b;">コミュニティ・スクール認定 (ストック・のれん分け)</div>
+                <div style="font-size: 9pt; color: #475569;"><strong style="color: #d97706; font-size: 10.5pt;">600万円 (20%)</strong> <span style="font-size: 8pt; color: #64748b;">(月50万円目安)</span></div>
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: #7c3aed; flex-shrink: 0; margin-top: 3px;"></div>
+            <div>
+                <div style="font-weight: bold; font-size: 9.5pt; color: #1e293b;">デジタル講座・物販キット (自動化・不労)</div>
+                <div style="font-size: 9pt; color: #475569;"><strong style="color: #7c3aed; font-size: 10.5pt;">450万円 (15%)</strong> <span style="font-size: 8pt; color: #64748b;">(月37.5万円目安)</span></div>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+    </div>
+    </div>
+
+<div class="page-break"></div>
+<h3>📈 4大エンジン別 収益シミュレーション一覧表</h3>
+
+<table><thead><tr>
+<th>エンジン名</th>
+<th>主力商品・サービス</th>
+<th>想定客単価</th>
+<th>月間販売数/稼働</th>
+<th>月商目安</th>
+<th>労働負荷</th>
+<th>スケール性</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>① BtoB・法人</strong></td>
+<td>企業顧問（巡回シェルパ）＋チームビルディング合宿</td>
+<td>20万〜60万円</td>
+<td>顧問3社＋研修2本</td>
+<td><strong>約100万円</strong></td>
+<td>🟡 中（月4日）</td>
+<td>🟢 高</td>
+</tr>
+<tr>
+<td><strong>② リトリート・伴走</strong></td>
+<td>四国松山リトリート＋6ヶ月継続コーチング</td>
+<td>25万〜35万円</td>
+<td>リトリート1回＋伴走3名</td>
+<td><strong>約65万円</strong></td>
+<td>🔴 高（月3日）</td>
+<td>🟡 中</td>
+</tr>
+<tr>
+<td><strong>③ ストック・認定</strong></td>
+<td>オンラインサロン「ととのえ部」＋認定講師ライセンス</td>
+<td>3,300円 / 40万円</td>
+<td>会員120名＋受講生隔月</td>
+<td><strong>約50万円</strong></td>
+<td>🟢 低（月1日）</td>
+<td>🟣 超高</td>
+</tr>
+<tr>
+<td><strong>④ 自動販売・物販</strong></td>
+<td>動画講座＋自宅蕎麦打ちキット＆そば粉定期便</td>
+<td>3,000〜30,000円</td>
+<td>キット定期50件＋動画講座</td>
+<td><strong>約35万円</strong></td>
+<td>🟢 ゼロ〜極小</td>
+<td>🟣 超高</td>
+</tr>
+<tr>
+<td><strong>【合計】</strong></td>
+<td>—</td>
+<td>—</td>
+<td><strong>合計実働：月8〜9日</strong></td>
+<td><strong>月商 250万円</strong><br><strong>(年商 3,000万円)</strong></td>
+<td>余裕のある<br>ライフスタイル</td>
+<td><strong>高収益<br>体質完成</strong></td>
+</tr>
+</tbody></table>
+
+
+
+<h2>🗂️ ビジュアルカード型・収益ビジネスモデルカタログ</h2>
+
+
+
+<h3>ENGINE 1：🏢 高単価 BtoB・法人事業（安定と大口利益の柱）</h3>
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 01: 経営者・CXO向け「五感調律マインドフルネス合宿」</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">激務・孤独・重圧に晒されるベンチャー経営者、2代目社長、役員陣</div><div class="card-label">💰 想定価格</div><div class="card-value">600,000円 〜 1,200,000円 / 1社（1泊2日・最大3名）</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🔴 月1回（1泊2日）</div><div class="card-label">💡 収益構造</div><div class="card-value">道後温泉・松山古民家と提携。「雑念を断つ蕎麦打ち」＋「深層対話」</div><div class="card-label">🚀 収益試算</div><div class="card-value">隔月1社受注 ＝ <strong>月平均 30万〜50万円</strong></div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">「ただの座禅や旅行」ではなく「元職人の五感体験×プロコーチの対話」</div>
+            </div>
+        </div>
+        
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 02: 企業の五感解放型「チームビルディング・オフサイト研修」</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">リモートワークで関係性が希薄化したIT企業、新体制キックオフ組織</div><div class="card-label">💰 想定価格</div><div class="card-value">350,000円 〜 600,000円 / 半日〜1日（10〜20名規模）</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🟡 月1〜2回（半日）</div><div class="card-label">💡 収益構造</div><div class="card-value">全員で蕎麦を打って食べる（共同体験）→ 心理的安全性を最大化</div><div class="card-label">🚀 収益試算</div><div class="card-value">月1回開催 ＝ <strong>月商 40万円</strong></div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">座学のみの退屈な研修と違い、五感を刺激するため満足度・リピート率絶大</div>
+            </div>
+        </div>
+        
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 03: 中小企業向け「顧問ライフ＆キャリアシェルパ」（定期巡回）</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">人事部・相談窓口がない社員30〜150名規模の中小企業</div><div class="card-label">💰 想定価格</div><div class="card-value">月額 150,000円 〜 250,000円 / 社（月1日訪問＋オンライン相談）</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🟢 低〜中（月1日訪問）</div><div class="card-label">💡 収益構造</div><div class="card-value">産業カウンセラー×キャリアコンサルタントの資格で離職防止・メンタル支援</div><div class="card-label">🚀 収益試算</div><div class="card-value">3社契約 ＝ <strong>月額 50万円（毎月自動確定する強固なストック収入）</strong></div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">社内人事には言えない本音を受け止める「安心安全な第三者窓口」</div>
+            </div>
+        </div>
+        
+
+
+
+<div class="page-break"></div>
+<h3>ENGINE 2：🌄 高付加価値リトリート＆個人伴走（熱狂的ファンの確立）</h3>
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 04: 「人生再起動（Re-boot）リトリート in 四国」</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">燃え尽き気味の会社員、キャリアに迷う40〜50代、セカンドライフ層</div><div class="card-label">💰 想定価格</div><div class="card-value">250,000円 / 1名（2泊3日・定員3名限定のプレミアム少人数制）</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🔴 2ヶ月に1回（2泊3日）</div><div class="card-label">💡 収益構造</div><div class="card-value">ライフシェルパ号で巡る自然散策＋そば打ち＋マンダラ人生棚卸し</div><div class="card-label">🚀 収益試算</div><div class="card-value">1回3名参加 ＝ 75万円（2ヶ月に1回開催で <strong>月平均 37.5万円</strong>）</div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">「旅行」ではなく「人生の舵を取り戻す通過儀礼」としての価値設定</div>
+            </div>
+        </div>
+        
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 05: 6ヶ月集中「自分との関係をととのえる」パーソナル伴走</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">自己肯定感の低さ、対人関係の悩み、独立準備に悩む個人</div><div class="card-label">💰 想定価格</div><div class="card-value">330,000円 〜 450,000円 / 6ヶ月（月2回セッション＋チャット相談）</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🟡 月数時間 / 人</div><div class="card-label">💡 収益構造</div><div class="card-value">単発セッションを廃止し、長期コミット型に一本化して結果を出させる</div><div class="card-label">🚀 収益試算</div><div class="card-value">常時5〜6名が稼働中 ＝ <strong>月商 約30万〜40万円</strong></div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">自身の劣等感・対人恐怖の克服ストーリーが唯一無二の共感を生む</div>
+            </div>
+        </div>
+        
+
+
+
+<div class="page-break"></div>
+<h3>ENGINE 3：🔄 ストック課金＆認定・のれん分け（レバレッジの拡大）</h3>
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 06: オンラインサロン「ととのえ部」</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">日常のストレスをリセットしたい人、きくりんのファンコミュニティ</div><div class="card-label">💰 想定価格</div><div class="card-value">月額 3,850円（税込）</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🟢 低（週1回の問い配信＋月1回オンラインZoom交流会）</div><div class="card-label">💡 収益構造</div><div class="card-value">「魔法の質問」と「大丈夫の言霊」で日々の心の波をととのえる場</div><div class="card-label">🚀 収益試算</div><div class="card-value">会員130名 ＝ <strong>月額 50万円（固定費をすべて賄うベース収入）</strong></div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">高度な講義ではなく「帰ってこられる心のオアシス」としての場づくり</div>
+            </div>
+        </div>
+        
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 07: 「そば打ちマインドフルネス®」認定ファシリテーター養成講座</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">地域のコミュニティリーダー、コーチ、ウェルネス系講師</div><div class="card-label">💰 想定価格</div><div class="card-value">受講料 440,000円 ＋ 認定ライセンス・更新料 月額 5,500円</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🟡 年2回開催（短期集中講座）</div><div class="card-label">💡 収益構造</div><div class="card-value">自分のメソッドを他者に伝授して全国展開。修了者は支部として活動</div><div class="card-label">🚀 収益試算</div><div class="card-value">1期5名受講 ＝ 220万円（年2回で440万円＋月額ライセンス料）</div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">誰も真似できない「蕎麦×マインドフルネス」の商標・ブランド確立</div>
+            </div>
+        </div>
+        
+
+
+
+<div class="page-break"></div>
+<h3>ENGINE 4：📦 デジタル自動販売＆プロダクト物販（労働時間ゼロの収益）</h3>
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 08: 「こころととのう 自宅蕎麦打ちキット＆そば粉定期便」</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">都会のワーカホリック層、丁寧な暮らしを求める層、リトリート参加者</div><div class="card-label">💰 想定価格</div><div class="card-value">スターターキット 19,800円 / そば粉定期便 月額 3,980円</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🟢 ゼロ（発送代行・提携製粉所からの直送スキーム）</div><div class="card-label">💡 収益構造</div><div class="card-value">初心者向け解説動画＋厳選そば粉＋「打つ前の瞑想音声ガイド」</div><div class="card-label">🚀 収益試算</div><div class="card-value">定期購入者 50名 ＝ <strong>月商 約20万円</strong></div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">食品メーカー商品開発経験を活かした「絶対に失敗しない粉の黄金比」</div>
+            </div>
+        </div>
+        
+
+
+        <div class="business-card no-break">
+            <div class="card-header">🏷️ CARD 09: オンライン買い切り動画講座（Udemy / 自社プラットフォーム）</div>
+            <div class="card-body">
+                <div class="card-label">🎯 ターゲット</div><div class="card-value">あがり症・人前で緊張して話せないビジネスパーソン</div><div class="card-label">💰 想定価格</div><div class="card-value">19,800円 〜 38,000円</div><div class="card-label">⏱️ 労働負荷</div><div class="card-value">🟢 完全ゼロ（一度撮影・アップロードすれば自動販売）</div><div class="card-label">💡 収益構造</div><div class="card-value">「話し方の前に『自分との関係』をととのえる伝わる技術」</div><div class="card-label">🚀 収益試算</div><div class="card-value">月10〜15本販売 ＝ <strong>月商 約15万〜25万円</strong></div><div class="card-label">⭐ 独自の勝因</div><div class="card-value">話し方スクール認定講師の実績と、克服者ならではの具体的ステップ</div>
+            </div>
+        </div>
+        
+
+
+
+<h2>⚡ 【一目瞭然】顧客が自然に高単価へ進む「収益ファネル」</h2>
+
+
+    <div class="funnel-container no-break">
+        <div class="funnel-step funnel-step-1">
+            <div class="funnel-step-title">① 集客・認知（無料〜低価格フロント）</div>
+            <div class="funnel-step-desc">Instagram / note / Voicy「大丈夫！ラジオ」 / 出張蕎麦打ちイベント / 話し方体験セミナー（3,000〜5,000円）</div>
+        </div>
+        <div class="funnel-arrow">▼ ファンが参加・継続（月額サロン＆手軽なキット）</div>
+        <div class="funnel-step funnel-step-2">
+            <div class="funnel-step-title">② 信頼構築・ベース収益（月額課金・キット）</div>
+            <div class="funnel-step-desc">オンラインサロン「ととのえ部」（月額3,850円） / 自宅蕎麦打ちキット＆そば粉定期便 / オンライン動画講座（19,800円）</div>
+        </div>
+        <div class="funnel-arrow">▼ 人生変革を求める人がステップアップ</div>
+        <div class="funnel-step funnel-step-3">
+            <div class="funnel-step-title">③ コア高単価プログラム（高利益・人生変革）</div>
+            <div class="funnel-step-desc">四国松山リトリート（250,000円） / 6ヶ月パーソナル伴走コーチング（330,000円） / 認定ファシリテーター養成講座（440,000円）</div>
+        </div>
+        <div class="funnel-arrow">▼ 経営者・企業が自社への導入を依頼</div>
+        <div class="funnel-step funnel-step-4">
+            <div class="funnel-step-title">④ 法人向けウルトラハイエンド（大口収益）</div>
+            <div class="funnel-step-desc">経営者向けマインドフルネス合宿（60万〜120万円） / 企業チームビルディング研修（35万〜60万円） / 顧問ライフ＆キャリアシェルパ（月額15万〜25万円/社）</div>
+        </div>
+    </div>
+    
+
+
+
+<div class="page-break"></div>
+
+    <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px 16px; margin: 12px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); page-break-inside: avoid;">
+        <div style="text-align: center; font-weight: bold; font-size: 11.5pt; color: #1e3a8a; margin-bottom: 12px;">
+            📅 年商3,000万円実現 4四半期実行ロードマップ
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+            <!-- Q1 -->
+            <div style="display: grid; grid-template-columns: 130px 1fr; gap: 10px; align-items: center;">
+                <div style="background: #eff6ff; border: 1.2px solid #bfdbfe; border-radius: 5px; padding: 6px 8px; text-align: center;">
+                    <div style="font-weight: 800; color: #1e40af; font-size: 9.5pt;">Q1 (1〜3ヶ月)</div>
+                    <div style="font-size: 7.5pt; color: #3b82f6;">高単価商品の確立</div>
+                </div>
+                <div style="background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); color: #ffffff; padding: 7px 12px; border-radius: 5px; box-shadow: 0 1px 2px rgba(59,130,246,0.25);">
+                    <div style="font-weight: bold; font-size: 9pt;">単発セッション廃止・値上げ ➔ 四国リトリート＆6ヶ月伴走LP完成</div>
+                    <div style="font-size: 8pt; color: #eff6ff; margin-top: 1px;">★既存顧客へ先行オファー実施（目標：モニター成約で300万円突破）</div>
+                </div>
+            </div>
+            <!-- Q2 -->
+            <div style="display: grid; grid-template-columns: 130px 1fr; gap: 10px; align-items: center;">
+                <div style="background: #ecfdf5; border: 1.2px solid #a7f3d0; border-radius: 5px; padding: 6px 8px; text-align: center;">
+                    <div style="font-weight: 800; color: #065f46; font-size: 9.5pt;">Q2 (4〜6ヶ月)</div>
+                    <div style="font-size: 7.5pt; color: #10b981;">法人BtoB展開</div>
+                </div>
+                <div style="background: linear-gradient(90deg, #059669 0%, #34d399 100%); color: #ffffff; padding: 7px 12px; border-radius: 5px; box-shadow: 0 1px 2px rgba(5,150,105,0.25);">
+                    <div style="font-weight: bold; font-size: 9pt;">企業向け研修・顧問提案書作成 ➔ 経営者合宿＆チーム研修の受注</div>
+                    <div style="font-size: 8pt; color: #ecfdf5; margin-top: 1px;">★同友会・商工会議所・ベンチャー経営者コミュニティへアプローチ（月商100万達成）</div>
+                </div>
+            </div>
+            <!-- Q3 -->
+            <div style="display: grid; grid-template-columns: 130px 1fr; gap: 10px; align-items: center;">
+                <div style="background: #fffbeb; border: 1.2px solid #fde68a; border-radius: 5px; padding: 6px 8px; text-align: center;">
+                    <div style="font-weight: 800; color: #92400e; font-size: 9.5pt;">Q3 (7〜9ヶ月)</div>
+                    <div style="font-size: 7.5pt; color: #d97706;">ストック化・サロン</div>
+                </div>
+                <div style="background: linear-gradient(90deg, #d97706 0%, #fbbf24 100%); color: #ffffff; padding: 7px 12px; border-radius: 5px; box-shadow: 0 1px 2px rgba(217,119,6,0.25);">
+                    <div style="font-weight: bold; font-size: 9pt;">オンラインサロン「ととのえ部」開設 ➔ 会員100名突破・月額固定収益化</div>
+                    <div style="font-size: 8pt; color: #fffbeb; margin-top: 1px;">★「魔法の質問」と「大丈夫の言霊」で毎朝配信。ベース固定費を完全ストック化</div>
+                </div>
+            </div>
+            <!-- Q4 -->
+            <div style="display: grid; grid-template-columns: 130px 1fr; gap: 10px; align-items: center;">
+                <div style="background: #f5f3ff; border: 1.2px solid #ddd6fe; border-radius: 5px; padding: 6px 8px; text-align: center;">
+                    <div style="font-weight: 800; color: #5b21b6; font-size: 9.5pt;">Q4 (10〜12ヶ月)</div>
+                    <div style="font-size: 7.5pt; color: #8b5cf6;">自動化・認定制度</div>
+                </div>
+                <div style="background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%); color: #ffffff; padding: 7px 12px; border-radius: 5px; box-shadow: 0 1px 2px rgba(124,58,237,0.25);">
+                    <div style="font-weight: bold; font-size: 9pt;">「蕎麦打ちマインドフルネス®」認定講座開講 ➔ 動画講座・定期便の自動販売</div>
+                    <div style="font-size: 8pt; color: #f5f3ff; margin-top: 1px;">★のれん分け認定講師の育成＆D2C蕎麦打ちキット自動販売で年商3,000万円体制完成</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+        <div class="conclusion-box no-break">
+            <h2>💎 結論：なぜこのモデルなら「ゆとり」と「高年収」が両立するのか？</h2>
+            <div style="font-size: 9.2pt; line-height: 1.5; color: #1e293b; padding: 2px 4px;">
+                1. <strong>実働日は月8〜9日のみ</strong>:
+   * 法人訪問（3日）＋ リトリート（2〜3日）＋ サロン・講座運営（2〜3日）で完結。
+2. <strong>価格競争から100%解放される</strong>:
+   * 「キャリアコーチ」なら1時間1万円で比較されますが、「蕎麦打ちで五感を解放し、人生の舵を取り戻す唯一のシェルパ」には定価が存在せず、きくりん氏の言い値で成立します。
+3. <strong>景気や労働に左右されないストックと自動収益</strong>:
+   * サロン月額＋企業顧問料＋キット定期便により、<strong>「何もしなくても毎月100万円以上が入ってくる基盤」</strong>ができるため、心に圧倒的なゆとりを持ちながら質の高い支援に専念できます。
+            </div>
+        </div>
+        
+</body>
+</html>
