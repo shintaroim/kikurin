@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菊池伸哉（きくりん）プロジェクト｜成果物・プロトタイプ総合ポータル</title>
+    <meta name="description" content="菊池伸哉（きくりん）氏のライフ＆キャリアシェルパ事業に関する全成果物（Webサイトプロトタイプ・公式戦略提案書PDF・収益最大化ダッシュボード・ビジネスアイデア大全）を閲覧・ダウンロードできる総合ポータルです。">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        mincho: ['"Shippori Mincho"', 'serif'],
+                    },
+                    colors: {
+                        soba: {
+                            50: '#FAF8F5',
+                            100: '#F3EFEA',
+                            200: '#E6DFD5',
+                            300: '#CFC3B0',
+                            600: '#8A7A64',
+                            800: '#4A4033',
+                            900: '#2C251D',
+                        },
+                        amber: {
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            700: '#B45309',
+                        },
+                        indigo: {
+                            800: '#1E293B',
+                            900: '#0F172A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-soba-50 text-soba-900 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- ヘッダー -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-soba-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-soba-800 text-amber-100 flex items-center justify-center font-mincho font-bold text-xl shadow">
+                    導
+                </div>
+                <div>
+                    <span class="block text-xs text-soba-600 font-medium">きくりん プロジェクト資産</span>
+                    <h1 class="font-mincho text-lg font-bold text-soba-900">成果物・プロトタイプ総合ポータル</h1>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="./index.html" class="px-4 py-2 bg-amber-700 hover:bg-amber-800 text-white text-xs sm:text-sm font-bold rounded-lg transition shadow flex items-center gap-1.5">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                    <span>新LPプロトタイプを開く</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full space-y-16">
+
+        <!-- ヒーロー案内 -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold rounded-full">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                オンライン閲覧 ＆ 全ファイル直接アクセス対応
+            </div>
+            <h2 class="font-mincho text-3xl sm:text-4xl font-bold text-soba-900 leading-tight">
+                菊池伸哉（きくりん）氏<br>
+                戦略提案書・Webプロトタイプ全一覧
+            </h2>
+            <p class="text-soba-600 text-sm sm:text-base leading-relaxed">
+                「ライフ＆キャリアシェルパ」事業の売上最大化とブランド確立に向けた、全成果物（PDF資料・リッチWebページ・プロトタイプ）をこちらから直接閲覧・ダウンロードいただけます。
+            </p>
+        </div>
+
+        <!-- セクション1：Webサイト プロトタイプ -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between border-b border-soba-200 pb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="layout" class="w-6 h-6 text-amber-700"></i>
+                    <h3 class="font-mincho text-2xl font-bold text-soba-900">01. Webサイト プロトタイプ（動作確認版）</h3>
+                </div>
+                <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2.5 py-1 rounded-full">実機ブラウザ動作中</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- プロトタイプ 1：メイン公式LP -->
+                <div class="bg-white rounded-2xl border border-soba-200 shadow-sm hover:shadow-lg transition p-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold rounded-full">個人・全体向け</span>
+                            <span class="text-xs text-soba-500 font-mono">index.html</span>
+                        </div>
+                        <h4 class="font-mincho text-xl font-bold text-soba-900">
+                            公式サイト リニューアル新ランディングページ
+                        </h4>
+                        <p class="text-xs sm:text-sm text-soba-600 leading-relaxed">
+                            「五感をととのえ、心をひらく」をコンセプトに、元蕎麦職人×国家資格キャリアコンサルタントの唯一無二の強みを訴求したメインLPです。
+                        </p>
+                        <div class="bg-soba-50 rounded-xl p-4 text-xs text-soba-700 space-y-1.5">
+                            <p class="font-bold text-soba-900">✨ 主な特徴：</p>
+                            <p>・五感体験（蕎麦打ち）とカウンセリングの融合ストーリー</p>
+                            <p>・3つの入口（個人セッション・法人・蕎麦リトリート）の明快な導線</p>
+                            <p>・スマホ完全最適化、FAQ開閉アニメーション、高CVフォーム</p>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="./index.html" class="w-full py-3.5 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-sm">
+                            <i data-lucide="globe" class="w-4 h-4"></i>
+                            <span>公式LPプロトタイプを見る（全画面）</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- プロトタイプ 2：法人特化LP -->
+                <div class="bg-white rounded-2xl border border-soba-200 shadow-sm hover:shadow-lg transition p-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-indigo-50 border border-indigo-200 text-indigo-900 text-xs font-bold rounded-full">法人・経営者向け</span>
+                            <span class="text-xs text-soba-500 font-mono">corporate.html</span>
+                        </div>
+                        <h4 class="font-mincho text-xl font-bold text-soba-900">
+                            法人向け組織開発・経営者リトリート特化LP
+                        </h4>
+                        <p class="text-xs sm:text-sm text-soba-600 leading-relaxed">
+                            「手打ち蕎麦×心理的安全性の組織開発」。経営陣向け合宿、チームビルディング研修、出張蕎麦打ちなどの高単価BtoB向け特化型LPです。
+                        </p>
+                        <div class="bg-soba-50 rounded-xl p-4 text-xs text-soba-700 space-y-1.5">
+                            <p class="font-bold text-soba-900">✨ 主な特徴：</p>
+                            <p>・経営者・人事向けに特化したネイビー基調の信頼感あるデザイン</p>
+                            <p>・3つの研修メニュー（役員合宿/チームビルディング/巡回顧問）</p>
+                            <p>・費用目安、導入フロー、研修提案資料請求導線を網羅</p>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="./corporate.html" class="w-full py-3.5 bg-indigo-900 hover:bg-indigo-950 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-sm">
+                            <i data-lucide="building-2" class="w-4 h-4"></i>
+                            <span>法人特化LPプロトタイプを見る（全画面）</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- セクション2：01_完成成果物_PDF（企画・戦略ドキュメント） -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between border-b border-soba-200 pb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="file-text" class="w-6 h-6 text-amber-700"></i>
+                    <h3 class="font-mincho text-2xl font-bold text-soba-900">02. 完成成果物 PDF 資料（閲覧・ダウンロード）</h3>
+                </div>
+                <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-full">PDF ＆ HTML両対応</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 資料 1：公式Webサイトリニューアル＆売上最大化戦略提案書 -->
+                <div class="bg-white rounded-2xl border border-soba-200 shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-soba-100 aspect-[16/10] overflow-hidden border-b border-soba-200">
+                            <img src="./docs/previews/proposal_thumb.png" alt="提案書サムネイル" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-amber-700 text-white text-xs font-bold rounded shadow">総合戦略</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h4 class="font-mincho text-lg font-bold text-soba-900 leading-snug">
+                                公式Webサイトリニューアル＆売上最大化戦略提案書
+                            </h4>
+                            <p class="text-xs text-soba-600 leading-relaxed">
+                                現状の課題分析から、ポジション再定義、CVファネル設計、年商目標達成ロードマップまでを包括した総合戦略書。
+                            </p>
+                            <div class="text-xs text-soba-500 space-y-1 pt-2">
+                                <div class="flex items-center justify-between">
+                                    <span>形式：PDF / HTML</span>
+                                    <span>サイズ：約1.5 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-2">
+                        <a href="./pdf/proposal.pdf" target="_blank" class="w-full py-2.5 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow">
+                            <i data-lucide="file-down" class="w-4 h-4"></i>
+                            <span>PDFを開く・保存</span>
+                        </a>
+                        <a href="./docs/proposal.html" class="w-full py-2.5 bg-soba-100 hover:bg-soba-200 text-soba-800 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                            <i data-lucide="monitor" class="w-4 h-4"></i>
+                            <span>Web版で読む</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 資料 2：収益最大化ダッシュボード＆ビジュアルカタログ -->
+                <div class="bg-white rounded-2xl border border-soba-200 shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-soba-100 aspect-[16/10] overflow-hidden border-b border-soba-200">
+                            <img src="./docs/previews/dashboard_thumb.png" alt="ダッシュボードサムネイル" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-indigo-900 text-white text-xs font-bold rounded shadow">収益設計</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h4 class="font-mincho text-lg font-bold text-soba-900 leading-snug">
+                                収益最大化ダッシュボード＆ビジュアルカタログ
+                            </h4>
+                            <p class="text-xs text-soba-600 leading-relaxed">
+                                個人セッション、法人研修、蕎麦リトリートの3大事業の単価体系、月別売上シミュレーション、ファネル構造を可視化。
+                            </p>
+                            <div class="text-xs text-soba-500 space-y-1 pt-2">
+                                <div class="flex items-center justify-between">
+                                    <span>形式：PDF / HTML</span>
+                                    <span>サイズ：約1.5 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-2">
+                        <a href="./pdf/dashboard.pdf" target="_blank" class="w-full py-2.5 bg-indigo-900 hover:bg-indigo-950 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow">
+                            <i data-lucide="file-down" class="w-4 h-4"></i>
+                            <span>PDFを開く・保存</span>
+                        </a>
+                        <a href="./docs/dashboard.html" class="w-full py-2.5 bg-soba-100 hover:bg-soba-200 text-soba-800 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                            <i data-lucide="monitor" class="w-4 h-4"></i>
+                            <span>Web版で読む</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 資料 3：強みを活かした収益最大化＆ビジネスアイデア大全 -->
+                <div class="bg-white rounded-2xl border border-soba-200 shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-soba-100 aspect-[16/10] overflow-hidden border-b border-soba-200">
+                            <img src="./docs/previews/ideas_thumb.png" alt="アイデア大全サムネイル" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-emerald-800 text-white text-xs font-bold rounded shadow">アイデア20選</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h4 class="font-mincho text-lg font-bold text-soba-900 leading-snug">
+                                強みを活かした収益最大化＆ビジネスアイデア大全
+                            </h4>
+                            <p class="text-xs text-soba-600 leading-relaxed">
+                                元蕎麦職人×国家資格キャリアコンサルタントの独自資産から生み出された、新規事業・高収益プログラムの具体案20選。
+                            </p>
+                            <div class="text-xs text-soba-500 space-y-1 pt-2">
+                                <div class="flex items-center justify-between">
+                                    <span>形式：PDF / HTML</span>
+                                    <span>サイズ：約0.6 MB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-2">
+                        <a href="./pdf/ideas.pdf" target="_blank" class="w-full py-2.5 bg-emerald-800 hover:bg-emerald-900 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow">
+                            <i data-lucide="file-down" class="w-4 h-4"></i>
+                            <span>PDFを開く・保存</span>
+                        </a>
+                        <a href="./docs/ideas.html" class="w-full py-2.5 bg-soba-100 hover:bg-soba-200 text-soba-800 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                            <i data-lucide="monitor" class="w-4 h-4"></i>
+                            <span>Web版で読む</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- セクション3：元の日本語ファイル名での直接ダウンロードリンク（互換性確保） -->
+        <section class="bg-white rounded-2xl border border-soba-200 p-6 space-y-4">
+            <h4 class="font-mincho text-lg font-bold text-soba-900 flex items-center gap-2">
+                <i data-lucide="folder-archive" class="w-5 h-5 text-amber-700"></i>
+                <span>「01_完成成果物_PDF」日本語元ファイルへの直接リンク</span>
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <a href="./01_%E5%AE%8C%E6%88%90%E6%88%90%E6%8E%9C%E7%89%A9_PDF/%E3%81%8D%E3%81%8F%E3%82%8A%E3%82%22%E3%82%93_%E5%85%AC%E5%BC%8FWeb%E3%82%B5%E3%82%A4%E3%83%88%E3%83%AA%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%A2%E3%83%AB%EF%BC%86%E5%A3%B2%E4%B8%8A%E6%9C%80%E5%A4%A7%E5%8C%96%E6%88%A6%E7%95%A5%E6%8F%90%E6%A1%88%E6%9B%B8.pdf" download class="p-3 bg-soba-50 hover:bg-soba-100 rounded-xl border border-soba-200 flex items-center gap-2 text-soba-800 transition">
+                    <i data-lucide="download" class="w-4 h-4 text-amber-700"></i>
+                    <span class="truncate">きくりん_公式Webサイトリニューアル＆売上最大化戦略提案書.pdf</span>
+                </a>
+                <a href="./01_%E5%AE%8C%E6%88%90%E6%88%90%E6%8E%9C%E7%89%A9_PDF/%E3%81%8D%E3%81%8F%E3%82%8A%E3%82%22%E3%82%93_%E5%8F%8E%E7%9B%8A%E6%9C%80%E5%A4%A7%E5%8C%96%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%EF%BC%86%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0.pdf" download class="p-3 bg-soba-50 hover:bg-soba-100 rounded-xl border border-soba-200 flex items-center gap-2 text-soba-800 transition">
+                    <i data-lucide="download" class="w-4 h-4 text-indigo-800"></i>
+                    <span class="truncate">きくりん_収益最大化ダッシュボード＆ビジュアルカタログ.pdf</span>
+                </a>
+                <a href="./01_%E5%AE%8C%E6%88%90%E6%88%90%E6%8E%9C%E7%89%A9_PDF/%E3%81%8D%E3%81%8F%E3%82%8A%E3%82%22%E3%82%93_%E5%BC%B7%E3%81%BF%E3%82%92%E6%B4%BB%E3%81%8B%E3%81%97%E3%81%9F%E5%8F%8E%E7%9B%8A%E6%9C%80%E5%A4%A7%E5%8C%96%EF%BC%86%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2%E5%A4%A7%E5%85%A8.pdf" download class="p-3 bg-soba-50 hover:bg-soba-100 rounded-xl border border-soba-200 flex items-center gap-2 text-soba-800 transition">
+                    <i data-lucide="download" class="w-4 h-4 text-emerald-800"></i>
+                    <span class="truncate">きくりん_強みを活かした収益最大化＆ビジネスアイデア大全.pdf</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-soba-900 text-soba-400 py-8 border-t border-soba-800 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>菊池伸哉（きくりん）プロジェクト資産アーカイブ ｜ GitHub Pages ホスティング</p>
+            <p>&copy; 2026 Shinya Kikuchi Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

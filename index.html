@@ -86,8 +86,7 @@
                 <a href="#profile" class="hover:text-amber-700 transition">プロフィール</a>
                 <a href="#voice" class="hover:text-amber-700 transition">お客様の声</a>
                 <a href="#faq" class="hover:text-amber-700 transition">よくある質問</a>
-                <div class="flex items-center gap-3 pl-4 border-l border-soba-300">
-                    <a href="#contact" class="px-5 py-2.5 bg-amber-700 hover:bg-amber-800 text-white rounded-full font-bold shadow-sm transition hover:shadow-md flex items-center gap-2">
+                <div class="flex items-center gap-3 pl-4 border-l border-soba-300">`n                    <a href="./portal.html" class="px-3.5 py-2 bg-soba-100 hover:bg-soba-200 text-soba-900 border border-soba-300 rounded-full font-bold text-xs flex items-center gap-1.5 transition">`n                        <i data-lucide="folder-kanban" class="w-3.5 h-3.5 text-amber-700"></i>`n                        <span>成果物・PDF一覧</span>`n                    </a>`n                    <a href="#contact" class="px-5 py-2.5 bg-amber-700 hover:bg-amber-800 text-white rounded-full font-bold shadow-sm transition hover:shadow-md flex items-center gap-2">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
                         <span>無料相談を予約</span>
                     </a>
@@ -101,7 +100,7 @@
         </div>
 
         <!-- モバイルナビ -->
-        <div id="mobile-menu" class="hidden md:hidden bg-soba-50 border-b border-soba-200 px-6 py-6 space-y-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-soba-50 border-b border-soba-200 px-6 py-6 space-y-4">`n            <a href="./portal.html" class="block text-base font-bold text-amber-700 bg-amber-50 p-3 rounded-lg border border-amber-200">📁 全成果物・PDF資料一覧ポータル</a>
             <a href="#concept" class="block text-base font-medium text-soba-800">コンセプト</a>
             <a href="#services" class="block text-base font-medium text-soba-800">3つのアプローチ</a>
             <a href="#profile" class="block text-base font-medium text-soba-800">プロフィール</a>
@@ -580,7 +579,7 @@
                     <a href="#services" class="hover:text-white transition">サービス一覧</a>
                     <a href="#profile" class="hover:text-white transition">プロフィール</a>
                     <a href="#contact" class="hover:text-white transition">お問い合わせ</a>
-                    <a href="https://lifesherpasin.com/" target="_blank" class="hover:text-white transition">現行WordPressサイト</a>
+                    <a href="./portal.html" class="text-amber-400 hover:text-white transition font-bold">📄 全成果物・PDFポータル</a>`n                    <a href="https://lifesherpasin.com/" target="_blank" class="hover:text-white transition">現行WordPressサイト</a>
                 </div>
             </div>
             <div class="mt-12 pt-8 border-t border-soba-800 text-center text-xs text-soba-500">
@@ -610,7 +609,20 @@
             }
         }
     </script>
+    <!-- 📄 成果物・PDFポータルへの固定リンクバッジ -->
+    <aside aria-label="成果物ポータルリンク" class="fixed bottom-6 right-6 z-50">
+        <a href="./portal.html" class="flex items-center gap-2.5 px-4 py-3 bg-soba-900 text-white hover:bg-amber-800 shadow-2xl rounded-full border border-amber-500/40 font-bold text-xs sm:text-sm transition-all duration-300 hover:scale-105 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <i data-lucide="file-text" class="w-4 h-4 text-amber-300 group-hover:rotate-12 transition-transform"></i>
+            <span>全成果物・PDF一覧</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-soba-400 group-hover:text-white"></i>
+        </a>
+    </aside>
 </body>
 </html>
+
+
+
+
 
 
