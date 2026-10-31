@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ライフ＆キャリアシェルパ｜菊池 伸哉（きくりん）公式サイト</title>
+    <meta name="description" content="元蕎麦職人×国家資格キャリアコンサルタント。五感をととのえ、心をひらく。あなたの中にある本当の答えを見つける道先案内人（シェルパ）。">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        mincho: ['"Shippori Mincho"', 'serif'],
+                    },
+                    colors: {
+                        soba: {
+                            50: '#FAF8F5',
+                            100: '#F3EFEA',
+                            200: '#E6DFD5',
+                            300: '#CFC3B0',
+                            600: '#8A7A64',
+                            700: '#685946',
+                            800: '#4A4033',
+                            900: '#2C251D',
+                        },
+                        indigo: {
+                            900: '#1B2A4A',
+                            950: '#0F172A',
+                        },
+                        amber: {
+                            600: '#D97706',
+                            700: '#B45309',
+                            800: '#92400E',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(250, 248, 245, 0.96);
+            backdrop-filter: blur(12px);
+        }
+        .hero-pattern {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(#E2DAD0 0.6px, transparent 0.6px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-sans text-soba-900 bg-soba-50 antialiased selection:bg-amber-200">
+
+    <!-- 🌟 ヘッダーナビゲーション -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-soba-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-amber-500 shadow-md group-hover:scale-105 transition-transform bg-soba-200 flex-shrink-0">
+                    <img src="./image/kikurin_avatar_circle.png" alt="菊池伸哉" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="block text-xs text-soba-700 font-medium tracking-widest">ライフ＆キャリアシェルパ</span>
+                    <span class="font-mincho text-xl font-bold tracking-tight text-soba-900">菊池 伸哉 <span class="text-sm font-sans text-amber-800 font-normal">（きくりん）</span></span>
+                </div>
+            </a>
+
+            <!-- デスクトップメニュー -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-soba-800">
+                <a href="#concept" class="hover:text-amber-700 transition">コンセプト</a>
+                <a href="#services" class="hover:text-amber-700 transition">3つのアプローチ</a>
+                <a href="#profile" class="hover:text-amber-700 transition">プロフィール</a>
+                <a href="#voice" class="hover:text-amber-700 transition">お客様の声</a>
+                <a href="#faq" class="hover:text-amber-700 transition">よくある質問</a>
+                <div class="flex items-center gap-3 pl-4 border-l border-soba-300">
+                    <a href="#contact" class="px-5 py-2.5 bg-amber-700 hover:bg-amber-800 text-white rounded-full font-bold shadow-sm transition hover:shadow-md flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>無料相談を予約</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- モバイルメニューボタン -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-soba-800 focus:outline-none" aria-label="メニューを開く">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- モバイルナビ -->
+        <div id="mobile-menu" class="hidden md:hidden bg-soba-50 border-b border-soba-200 px-6 py-6 space-y-4">
+            <a href="#concept" class="block text-base font-medium text-soba-800">コンセプト</a>
+            <a href="#services" class="block text-base font-medium text-soba-800">3つのアプローチ</a>
+            <a href="#profile" class="block text-base font-medium text-soba-800">プロフィール</a>
+            <a href="#voice" class="block text-base font-medium text-soba-800">お客様の声</a>
+            <a href="#faq" class="block text-base font-medium text-soba-800">よくある質問</a>
+            <a href="#contact" class="block text-center w-full py-3 bg-amber-700 text-white rounded-xl font-bold shadow-sm">無料相談を予約</a>
+        </div>
+    </header>
+
+    <!-- 🏔️ ファーストビュー（Hero Section） -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 hero-pattern overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- キャッチコピーエリア -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold tracking-wider">
+                        <i data-lucide="compass" class="w-4 h-4 text-amber-700"></i>
+                        <span>「在り方」をととのえ、納得して次の一歩へ</span>
+                    </div>
+
+                    <h1 class="font-mincho text-3xl sm:text-5xl lg:text-5xl leading-tight font-bold text-soba-900 tracking-tight">
+                        五感をととのえ、心をひらく。<br>
+                        <span class="text-amber-800">答えはすべて、</span><br>
+                        あなたの中にある。
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-soba-900 leading-relaxed max-w-2xl font-normal">
+                        元蕎麦職人 × 国家資格キャリアコンサルタント。<br class="hidden sm:inline">
+                        頭で考えすぎて立ち止まったあなたに寄り添う、人生と働き方の「道先案内人（シェルパ）」。
+                        言葉による対話と、身体をひらく手打ち蕎麦で、あなた自身の本当の声を掬い上げます。
+                    </p>
+
+                    <!-- アクションボタングループ -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="#contact" class="px-8 py-4 bg-amber-700 hover:bg-amber-800 text-white rounded-xl font-bold text-base shadow-lg shadow-amber-900/15 flex items-center justify-center gap-3 transition-transform hover:-translate-y-0.5">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>【初回限定】60分お試し対話セッション</span>
+                        </a>
+                        <a href="#services-corporate" class="px-7 py-4 bg-white hover:bg-soba-100 text-soba-900 border border-soba-300 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition shadow-sm">
+                            <i data-lucide="building-2" class="w-5 h-5 text-soba-700"></i>
+                            <span>法人研修・経営者合宿</span>
+                        </a>
+                    </div>
+
+                    <!-- バッジ・実績ハイライト -->
+                    <div class="pt-6 flex flex-wrap items-center gap-4 text-xs text-soba-800 font-semibold">
+                        <span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-700"></i> 国家資格 キャリアコンサルタント</span>
+                        <span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-700"></i> 産業カウンセラー</span>
+                        <span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-700"></i> LCW認定プロコーチ</span>
+                        <span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-700"></i> 全国出張・オンライン対応</span>
+                    </div>
+                </div>
+
+                <!-- 菊池伸哉（きくりん）画像カード -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md bg-white p-5 rounded-3xl shadow-xl border border-soba-200 space-y-4">
+                        
+                        <!-- カード上部バッジ（写真とかぶらず一体化した洗練レイアウト） -->
+                        <div class="flex items-center justify-between bg-amber-50/90 border border-amber-200/90 px-4 py-2.5 rounded-2xl shadow-sm">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center shadow-xs">
+                                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold text-amber-800 tracking-wider block">五感をひらく</span>
+                                    <span class="text-xs sm:text-sm font-bold text-soba-900 font-mincho">手打ち蕎麦 × 深層対話</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-bold text-amber-900 bg-white px-2.5 py-1 rounded-full border border-amber-200 shadow-xs">
+                                唯一無二の伴走
+                            </span>
+                        </div>
+
+                        <!-- きくりん写真エリア（頭上や表情が美しく収まる設計） -->
+                        <div class="rounded-2xl overflow-hidden aspect-[4/4] relative bg-gradient-to-b from-soba-100 to-amber-50/50 border border-soba-200/60 shadow-inner">
+                            <img src="./image/kikurin_hero_card.png" alt="ライフ＆キャリアシェルパ 菊池伸哉（きくりん）" class="w-full h-full object-cover object-top pt-1">
+                        </div>
+
+                        <!-- 写真下部の情報ブロック（白背景＋高コントラストで絶対に読める設計） -->
+                        <div class="pt-2 border-t border-soba-100 space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <h3 class="font-mincho text-xl sm:text-2xl font-bold text-soba-900">
+                                    菊池 伸哉 <span class="text-sm font-sans font-medium text-amber-800">（きくりん）</span>
+                                </h3>
+                                <span class="px-2.5 py-1 bg-amber-100 border border-amber-300 text-amber-900 text-[11px] font-bold rounded-md">
+                                    愛媛・松山より全国へ
+                                </span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-soba-800 leading-relaxed font-normal bg-soba-50 p-3 rounded-xl border border-soba-200/80">
+                                <span class="font-bold text-amber-800">「合言葉は『大丈夫！すべてうまくいっている』」</span><br>
+                                答えを教えるのではなく、あなたの中にある本当の光を一緒に見つけ出します。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌿 コンセプト・想い（Concept Section） -->
+    <section id="concept" class="py-24 bg-white border-t border-b border-soba-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Philosophy</span>
+            <h2 class="font-mincho text-2xl sm:text-4xl font-bold text-soba-900 leading-relaxed">
+                頭でっかちになった思考を、<br>
+                一度、からっぽにしてみませんか。
+            </h2>
+            
+            <div class="w-16 h-1 bg-amber-600 mx-auto rounded-full"></div>
+
+            <div class="text-left text-soba-900 text-base sm:text-lg leading-relaxed space-y-6 pt-4 font-normal">
+                <p>
+                    「このままの仕事でいいのだろうか」「これからの人生、どう生きていけばいいのか」——<br>
+                    責任感が強く、周囲の期待に応えてきた人ほど、ふと立ち止まったときに自分の本音が分からなくなってしまいます。
+                </p>
+                <p>
+                    それは、あなたが迷っているからでも、意志が弱いからでもありません。<br>
+                    <strong class="font-bold text-amber-900 bg-amber-100/60 px-1 rounded">日々の忙しさの中で「頭（思考）」ばかりを使いすぎ、心と身体が固くなってしまっているだけです。</strong>
+                </p>
+                <p>
+                    山を登るとき、どの頂を目指し、どの道を歩むかを決めるのは、あなた自身。<br>
+                    私、菊池伸哉（きくりん）の役割は、上から正解を教える先生ではなく、あなたの横で一緒に地図を広げ、足元を照らす「シェルパ（道先案内人）」です。
+                </p>
+                <p class="font-medium text-soba-900 border-l-4 border-amber-600 pl-4 py-2 italic bg-amber-50 rounded-r-lg">
+                    「五感をひらき、身体を緩め、自分自身との関係をととのえる。」<br>
+                    そこから生まれた納得感こそが、あなたを本当に進みたい未来へと導いてくれます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🧭 独自の3本柱（Services Section） -->
+    <section id="services" class="py-24 bg-soba-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Three Pillars</span>
+                <h2 class="font-mincho text-3xl sm:text-4xl font-bold text-soba-900">
+                    あなたにととのえる、3つのアプローチ
+                </h2>
+                <p class="text-soba-800 text-sm sm:text-base font-medium">
+                    個人の人生の転機から、組織の心理的安全性、五感の解放リトリートまで。<br class="hidden sm:inline">
+                    目的に合わせた最適なプログラムをご用意しています。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- カード 1：個人向け -->
+                <div class="bg-white rounded-3xl p-8 border border-soba-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="user-check" class="w-7 h-7"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">For Individuals</span>
+                            <h3 class="font-mincho text-2xl font-bold text-soba-900">ライフ＆キャリア伴走・対話セッション</h3>
+                        </div>
+                        <p class="text-sm text-soba-800 leading-relaxed font-normal">
+                            「在り方 × 心 × 言葉 × 行動」の4階層を整理。100%否定のない安全な対話空間で、思考の絡まりをほどき、心から納得できる一歩を導き出します。
+                        </p>
+                        <ul class="text-xs sm:text-sm text-soba-800 space-y-2 border-t border-soba-200 pt-4 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> 初回 60分お試し対話セッション</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> 3ヶ月 / 6ヶ月 継続伴走プログラム</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> マンダラエンディングノート® ワーク</li>
+                        </ul>
+                    </div>
+                    <div class="pt-8">
+                        <a href="#contact" class="block w-full py-3 text-center bg-soba-900 hover:bg-amber-700 text-white rounded-xl font-bold text-sm transition shadow-sm">
+                            個人相談の詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- カード 2：法人・組織向け -->
+                <div id="services-corporate" class="bg-white rounded-3xl p-8 border-2 border-indigo-900/20 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group">
+                    <div class="absolute -top-3.5 right-6 px-3 py-1 bg-indigo-900 text-white text-xs font-bold rounded-full">
+                        経営者・人事向け
+                    </div>
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-900 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="building" class="w-7 h-7"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-indigo-900 uppercase tracking-wider">For Organizations</span>
+                            <h3 class="font-mincho text-2xl font-bold text-soba-900">チームビルディング研修・経営者合宿</h3>
+                        </div>
+                        <p class="text-sm text-soba-800 leading-relaxed font-normal">
+                            「同じ粉に触れ、同じ蕎麦を打って食べる」。肩書を脱いだ共同体験で心理的安全性を最大化。経営陣の合宿や離職防止の定期巡回顧問も対応。
+                        </p>
+                        <ul class="text-xs sm:text-sm text-soba-800 space-y-2 border-t border-soba-200 pt-4 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-600"></i> 経営陣向け 五感調律リトリート合宿</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-600"></i> 蕎麦打ちチームビルディング（出張可）</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-600"></i> 中小企業向け「外部巡回シェルパ」顧問</li>
+                        </ul>
+                    </div>
+                    <div class="pt-8">
+                        <a href="#contact" class="block w-full py-3 text-center bg-indigo-900 hover:bg-indigo-950 text-white rounded-xl font-bold text-sm transition shadow-sm">
+                            法人研修のご相談・資料請求
+                        </a>
+                    </div>
+                </div>
+
+                <!-- カード 3：五感・蕎麦打ちリトリート -->
+                <div class="bg-white rounded-3xl p-8 border border-soba-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="utensils" class="w-7 h-7"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Experience & Retreat</span>
+                            <h3 class="font-mincho text-2xl font-bold text-soba-900">五感手打ち蕎麦リトリート（SOBA）</h3>
+                        </div>
+                        <p class="text-sm text-soba-800 leading-relaxed font-normal">
+                            蕎麦粉の香り、手先の感覚、冷たい水。全身の五感を研ぎ澄ます「動の瞑想」で脳の疲れをリセット。愛媛・松山でのプライベート体験や全国出張。
+                        </p>
+                        <ul class="text-xs sm:text-sm text-soba-800 space-y-2 border-t border-soba-200 pt-4 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> 愛媛・道後 松山プライベートリトリート</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> 「ライフシェルパ号」全国出張蕎麦打ち</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> オンライン手打ち蕎麦部（コミュニティ）</li>
+                        </ul>
+                    </div>
+                    <div class="pt-8">
+                        <a href="#contact" class="block w-full py-3 text-center bg-soba-900 hover:bg-amber-700 text-white rounded-xl font-bold text-sm transition shadow-sm">
+                            体験・リトリートのご予約
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 👤 プロフィール（About Section） -->
+    <section id="profile" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- プロフィール写真・演出エリア -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-soba-100 rounded-3xl p-4 border border-soba-200 shadow-lg">
+                        <div class="aspect-[4/5] bg-soba-200 rounded-2xl overflow-hidden relative shadow-inner">
+                            <img src="./image/kikurin_profile_portrait.png" alt="菊池 伸哉（きくりん）プロフィール写真" class="w-full h-full object-cover object-top">
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl border border-soba-200 shadow-sm text-center">
+                                <div class="font-mincho text-xl font-bold text-soba-900">菊池 伸哉 <span class="text-xs font-sans text-amber-800 font-normal">（きくりん）</span></div>
+                                <div class="text-[11px] text-soba-700 font-medium">SHINYA KIKUCHI ｜ 愛媛県松山市在住・全国出張</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-soba-50 p-6 rounded-2xl border border-soba-200 space-y-2">
+                        <div class="text-xs font-bold text-soba-700 tracking-wider">保有資格・認定</div>
+                        <ul class="text-xs text-soba-800 space-y-1 font-medium">
+                            <li>• 国家資格 キャリアコンサルタント</li>
+                            <li>• 産業カウンセラー</li>
+                            <li>• ライフコーチワールド（LCW）認定プロコーチ</li>
+                            <li>• 魔法の質問 認定マスター</li>
+                            <li>• マンダラエンディングノート® ファシリテーター</li>
+                            <li>• 伝わる話し方トレーナー（大手スクール認定講師）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ストーリー・テキスト -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">My Story</span>
+                    <h2 class="font-mincho text-3xl sm:text-4xl font-bold text-soba-900 leading-snug">
+                        対人恐怖と劣等感を抱えていた私が、<br>
+                        「道先案内人」になるまで。
+                    </h2>
+
+                    <div class="space-y-4 text-soba-900 text-sm sm:text-base leading-relaxed font-normal">
+                        <p>
+                            私は幼少期を母子家庭で育ち、強い劣等感と極度の人見知りに苦しんできました。人と目を合わせるのが怖く、「自分には価値がない」という孤独を長く抱えていました。
+                        </p>
+                        <p>
+                            大学卒業後は食品メーカーで25年間、商品開発や現場に従事。その後、生き方を模索する中で蕎麦職人を目指して修行を重ねるなど、迷いと葛藤の多い道を歩んできました。
+                        </p>
+                        <p>
+                            転機となったのは、心理学やカウンセリングとの出会いでした。<br>
+                            <strong class="font-bold text-amber-900 bg-amber-100/60 px-1 rounded">「外側の環境や他人の評価を変えるのではなく、まず何よりも『自分自身との関係』をととのえること」。</strong><br>
+                            自分の弱さを受け容れられたとき、心の中の霧が晴れ、世界が温かく開けていきました。
+                        </p>
+                        <p>
+                            自らの苦しみを乗り越えた経験があるからこそ、私は誰よりもあなたの痛みに寄り添い、否定せず丸ごと受け止めることができます。
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-amber-50 rounded-2xl border border-amber-200/80">
+                        <p class="font-mincho text-lg font-bold text-amber-900">
+                            「大丈夫！すべてうまくいっている」
+                        </p>
+                        <p class="text-xs text-amber-800 mt-1">
+                            焦らなくて大丈夫。どんな道を通っても、あなた自身の答えに必ず辿り着けます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💬 お客様の声（Voice Section） -->
+    <section id="voice" class="py-24 bg-soba-100/40 border-t border-b border-soba-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Client Voice</span>
+                <h2 class="font-mincho text-3xl sm:text-4xl font-bold text-soba-900">
+                    セッション・体験をうけた方の声
+                </h2>
+                <p class="text-soba-700 text-sm">
+                    温かい安心感の中で、多くの方がご自身の新しい一歩を見つけられています。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 声 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-soba-200/90 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <h4 class="font-mincho text-lg font-bold text-soba-900 leading-snug">「誰にも話せなかった本音を、安心して打ち明けられました」</h4>
+                        <p class="text-xs sm:text-sm text-soba-800 leading-relaxed font-normal">
+                            転職するか残るかで半年以上悩んでいました。きくりんさんは一切アドバイスを押し付けず、私が本当に望んでいる生き方を一緒に見つけてくれました。セッション後、胸の重荷がフッと消えました。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-soba-100 text-xs text-soba-700 font-semibold">
+                        30代 女性 / IT企業勤務（対話セッション受講）
+                    </div>
+                </div>
+
+                <!-- 声 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-soba-200/90 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <h4 class="font-mincho text-lg font-bold text-soba-900 leading-snug">「手打ち蕎麦に没頭して、長年の脳疲労が吹き飛びました」</h4>
+                        <p class="text-xs sm:text-sm text-soba-800 leading-relaxed font-normal">
+                            毎日PCとスマホ漬けで頭が休まらない日々。松山のリトリートで無心に蕎麦を打った瞬間、驚くほど思考がクリアになりました。打ち立ての蕎麦の味と、その後の対話の深さは一生の宝物です。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-soba-100 text-xs text-soba-700 font-semibold">
+                        40代 男性 / 経営者（松山リトリート参加）
+                    </div>
+                </div>
+
+                <!-- 声 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-soba-200/90 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <h4 class="font-mincho text-lg font-bold text-soba-900 leading-snug">「チームの壁が崩れ、風通しが劇的に良くなりました」</h4>
+                        <p class="text-xs sm:text-sm text-soba-800 leading-relaxed font-normal">
+                            リモート続きで会話が減っていた部署の研修としてお願いしました。役職を忘れて全員で粉まみれになって蕎麦を打つ体験は、どんな座学研修よりも心理的安全性を高めてくれました。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-soba-100 text-xs text-soba-700 font-semibold">
+                        人事部長 / 製造業（チームビルディング研修導入）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ❓ よくある質問（FAQ Section） -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">FAQ</span>
+                <h2 class="font-mincho text-3xl sm:text-4xl font-bold text-soba-900">
+                    よくいただくご質問
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="border border-soba-200 rounded-2xl p-6 transition">
+                    <button class="w-full flex items-center justify-between text-left font-mincho text-base sm:text-lg font-bold text-soba-900 focus:outline-none" onclick="toggleFaq(this)">
+                        <span>Q. 蕎麦打ちの経験が全くないのですが、参加できますか？</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-soba-500 transition-transform"></i>
+                    </button>
+                    <div class="hidden text-sm sm:text-base text-soba-800 pt-4 leading-relaxed border-t border-soba-100 mt-4 font-normal">
+                        A. もちろん大歓迎です！ご参加いただく方の9割以上が未経験者です。元職人のきくりんが丁寧にお教えしますので、どなたでも美味しく打つことができます。上手に作ることよりも、粉の感触や香りを楽しむことが目的ですので、安心してお越しください。
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="border border-soba-200 rounded-2xl p-6 transition">
+                    <button class="w-full flex items-center justify-between text-left font-mincho text-base sm:text-lg font-bold text-soba-900 focus:outline-none" onclick="toggleFaq(this)">
+                        <span>Q. 対話セッションでは、転職を勧められるのでしょうか？</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-soba-500 transition-transform"></i>
+                    </button>
+                    <div class="hidden text-sm sm:text-base text-soba-800 pt-4 leading-relaxed border-t border-soba-100 mt-4 font-normal">
+                        A. いいえ、転職を前提としたセッションではありません。「今の職場での在り方」「複業・独立」「生き方の見直し」など、あらゆる選択肢をフラットに扱います。世間の常識ではなく、あなたが心から納得できる選択肢を一緒に見つけていきます。
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="border border-soba-200 rounded-2xl p-6 transition">
+                    <button class="w-full flex items-center justify-between text-left font-mincho text-base sm:text-lg font-bold text-soba-900 focus:outline-none" onclick="toggleFaq(this)">
+                        <span>Q. 全国どこでも出張してもらえますか？</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-soba-500 transition-transform"></i>
+                    </button>
+                    <div class="hidden text-sm sm:text-base text-soba-800 pt-4 leading-relaxed border-t border-soba-100 mt-4 font-normal">
+                        A. はい、日本全国どこへでも伺います！専用カー「ライフシェルパ号」に蕎麦打ち道具一式を積み込み、貴社のオフィスや合宿所、地域のコミュニティ施設などへ出張いたします。開催場所の手配についても柔軟にご相談に応じます。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✉️ お問い合わせ・予約（Contact Section） -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-soba-100 to-amber-50/40 border-t border-soba-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-soba-200">
+                <div class="text-center space-y-4 mb-10">
+                    <span class="text-amber-700 font-bold text-sm tracking-widest uppercase">Contact & Reservation</span>
+                    <h2 class="font-mincho text-2xl sm:text-3xl font-bold text-soba-900">
+                        まずはお気軽に、お話ししてみませんか。
+                    </h2>
+                    <p class="text-xs sm:text-sm text-soba-700 max-w-xl mx-auto">
+                        個人の方の無料相談・セッション予約、法人研修のお見積り・資料請求など、下記フォームよりお気軽にお問い合わせください。
+                    </p>
+                </div>
+
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('お問い合わせありがとうございます。メッセージを送信しました。きくりんより追ってご連絡いたします。');">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-soba-700 mb-2">お名前 <span class="text-red-500">*</span></label>
+                            <input type="text" required placeholder="例：山田 太郎" class="w-full px-4 py-3 rounded-xl border border-soba-300 focus:ring-2 focus:ring-amber-600 focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-soba-700 mb-2">メールアドレス <span class="text-red-500">*</span></label>
+                            <input type="email" required placeholder="example@email.com" class="w-full px-4 py-3 rounded-xl border border-soba-300 focus:ring-2 focus:ring-amber-600 focus:outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-soba-700 mb-2">ご相談の種別 <span class="text-red-500">*</span></label>
+                        <select class="w-full px-4 py-3 rounded-xl border border-soba-300 focus:ring-2 focus:ring-amber-600 focus:outline-none text-sm bg-white">
+                            <option value="trial">【個人】初回お試し対話セッション（60分）</option>
+                            <option value="corporate">【法人】研修・チームビルディング・合宿のご相談</option>
+                            <option value="retreat">【体験】手打ち蕎麦リトリート・出張ワークショップ</option>
+                            <option value="other">その他・取材・メディア登壇のご依頼</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-soba-700 mb-2">ご相談内容・メッセージ</label>
+                        <textarea rows="4" placeholder="現在の状況やご希望、ご質問などをご自由にご記入ください。" class="w-full px-4 py-3 rounded-xl border border-soba-300 focus:ring-2 focus:ring-amber-600 focus:outline-none text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        <span>メッセージを送信する</span>
+                    </button>
+                    
+                    <p class="text-center text-xs text-soba-500">
+                        ※ 原則2営業日以内に菊池伸哉本人よりご返信いたします。
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌲 フッター -->
+    <footer class="bg-soba-900 text-soba-300 py-16 border-t border-soba-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center justify-between">
+                <div class="md:col-span-6 space-y-3">
+                    <div class="font-mincho text-2xl text-white font-bold">ライフ＆キャリアシェルパ 菊池 伸哉</div>
+                    <p class="text-xs text-soba-400">
+                        「在り方」をととのえ、納得して次の一歩へ進む伴走。<br>
+                        合言葉は「大丈夫！すべてうまくいっている」
+                    </p>
+                </div>
+                <div class="md:col-span-6 flex flex-wrap md:justify-end gap-6 text-xs text-soba-400">
+                    <a href="#concept" class="hover:text-white transition">コンセプト</a>
+                    <a href="#services" class="hover:text-white transition">サービス一覧</a>
+                    <a href="#profile" class="hover:text-white transition">プロフィール</a>
+                    <a href="#contact" class="hover:text-white transition">お問い合わせ</a>
+                    <a href="https://lifesherpasin.com/" target="_blank" class="hover:text-white transition">現行WordPressサイト</a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-soba-800 text-center text-xs text-soba-500">
+                &copy; 2026 Shinya Kikuchi. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide Icons初期化
+        lucide.createIcons();
+
+        // モバイルメニュートグル
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQトグル
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            answer.classList.toggle('hidden');
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>
